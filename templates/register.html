@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f9fd;
+        }
+        .register-container {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            text-align: left;
+        }
+        h2 {
+            margin-bottom: 10px;
+        }
+        p {
+            color: gray;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 25px;
+            background-color: #276ef1;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #1a56c4;
+        }
+        .links {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        .links a {
+            text-decoration: none;
+            color: #276ef1;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="register-container">
+    <h2>Create Your Profile</h2>
+    <p>Search & apply to jobs from India’s No.1 Job Site</p>
+
+    <form method="POST">
+        <label for="username">Full Name<span style="color: red;">*</span></label>
+        <input type="text" name="username" id="username" placeholder="Enter your full name" required>
+
+        <label for="email">Email ID<span style="color: red;">*</span></label>
+        <input type="email" name="email" id="email" placeholder="Enter your email ID" required>
+
+        <label for="password">Password<span style="color: red;">*</span></label>
+        <input type="password" name="password" id="password" placeholder="(Minimum 6 characters)" required>
+
+        <button type="submit">Register</button>
+    </form>
+
+    <div class="links">
+        <a href="{{ url_for('login') }}">Already have an account? Login here.</a>
+    </div>
+</div>
+
+</body>
+</html>
