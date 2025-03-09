@@ -23,7 +23,7 @@ This is a **Job Recommendation System** that suggests jobs based on user skills 
 
 ### 1️⃣ Clone the Repository
 
-git clone https://github.com/your-username/job-recommendation.git
+git clone https://github.com/Chaitanya Pimpare/job-recommendation.git
 cd job-recommendation
 ```sh
 2️⃣ Create & Activate Virtual Environment
@@ -40,6 +40,9 @@ pip install -r requirements.txt
 4️⃣ Set Up the Database
 
 python create_db.py
+
+#Train the model
+ python train.py
 
 5️⃣ Run the Application
 python app.py
