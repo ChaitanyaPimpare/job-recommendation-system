@@ -23,7 +23,7 @@ This is a **Job Recommendation System** that suggests jobs based on user skills 
 
 ### 1️⃣ Clone the Repository
 
-git clone https://github.com/Chaitanya Pimpare/job-recommendation-system.git
+git clone https://github.com/ChaitanyaPimpare/job-recommendation-system.git
 cd job-recommendation
 ```sh
 2️⃣ Create & Activate Virtual Environment
