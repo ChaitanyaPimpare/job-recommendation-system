@@ -4,4 +4,6 @@ scikit-learn
 numpy
 pickle-mixin
 gunicorn 
-flask_sqlalchemy
+flask_sqlalchemy==2.5.1
+Flask-Login==0.5.0
+werkzeug==2.0.1
