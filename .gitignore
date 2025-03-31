@@ -10,7 +10,7 @@ __pycache__/
 .env
 
 # SQLite database instance (if used)
-#instance/
+instance/
 
 # OS-specific files
 .DS_Store
