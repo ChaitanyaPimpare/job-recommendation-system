@@ -82,7 +82,7 @@ def recommend_jobs():
         recommended_indices = similarities.argsort()[0][-5:][::-1]
         
         recommendations = job_data.iloc[recommended_indices][['job_id', 'title','company','salary','description']].to_dict(orient='records')
-        return render_template('index.html', recommendations=recommendations)
+        return render_template('recommendations.html', recommendations=recommendations)
     
     return render_template('index.html')
 
