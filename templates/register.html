@@ -66,10 +66,22 @@
             color: #276ef1;
             font-weight: bold;
         }
+         #successToast {
+            display: none;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgb(197, 18, 173);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            z-index: 1000;
+        }
     </style>
 </head>
 <body>
-
+<div id="successToast">Registered Successfully!</div>
 <div class="register-container">
     <h2>Create Your Profile</h2>
     <p>Search & apply to jobs from India’s No.1 Job Site</p>
@@ -91,6 +103,18 @@
         <a href="{{ url_for('login') }}">Already have an account? Login here.</a>
     </div>
 </div>
+<script>
+    function showSuccessMessage(event) {
+        event.preventDefault(); // Prevent form submission
 
+        let toast = document.getElementById("successToast");
+        toast.style.display = "block";
+
+        setTimeout(() => {
+            toast.style.display = "none";
+            document.querySelector("form").submit(); // Submit form after showing message
+        }, 2000);
+    }
+</script>
 </body>
 </html>
