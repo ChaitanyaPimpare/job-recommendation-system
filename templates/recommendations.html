@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommended Jobs</title>
+    <style>
+       body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fd;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            text-align: center;
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+        .job-card {
+            background: #e9f2ff;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+        .job-title {
+            font-weight: bold;
+        }
+        .job-company {
+            color: #276ef1;
+        }
+        .job-description {
+            font-size: 14px;
+            color: gray;
+            margin-top: 5px;
+        }
+        .job-salary {
+            font-weight: bold;
+            color: rgb(15, 17, 15);
+        }
+        .btn {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #276ef1;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Recommended Jobs</h2>
+    {% if recommendations %}
+        <ul>
+            {% for job in recommendations %}
+            <div class="job-card">
+                <div class="job-title">{{ job.title }}</div>
+                <div class="job-company">Company: {{ job.company }}</div>
+                <div class="job-salary">Salary: {{ job.salary }}</div>
+                <div class="job-description">Description: {{ job.description }}</div>
+            </div>
+                
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No recommendations available. Please try again with different skills.</p>
+    {% endif %}
+    <a href="{{ url_for('recommend_jobs') }}" class="btn">Back to Search</a>
+</div>
+
+</body>
+</html>
