@@ -1,83 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recommended Jobs</title>
-    <style>
-       body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f9fd;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .container {
-            background: white;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            text-align: center;
-        }
-        h2 {
-            margin-bottom: 20px;
-        }
-        .job-card {
-            background: #e9f2ff;
-            padding: 15px;
-            border-radius: 5px;
-            margin-bottom: 10px;
-            text-align: left;
-        }
-        .job-title {
-            font-weight: bold;
-        }
-        .job-company {
-            color: #276ef1;
-        }
-        .job-description {
-            font-size: 14px;
-            color: gray;
-            margin-top: 5px;
-        }
-        .job-salary {
-            font-weight: bold;
-            color: rgb(15, 17, 15);
-        }
-        .btn {
-            margin-top: 15px;
-            padding: 10px 20px;
-            background-color: #276ef1;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Recommended Jobs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url('/static/img/background.webp');
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      min-height: 100vh;
+    }
 
-    </style>
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 12px;
+      margin-top: 40px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    .job-card {
+      background: #f9f9f9;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 12px;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s, box-shadow 0.3s;
+    }
+
+    .job-card:hover {
+      transform: scale(1.02);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .job-title {
+      font-weight: 600;
+      font-size: 20px;
+      color: #1a1a1a;
+    }
+
+    .job-company {
+      color: #276ef1;
+      font-size: 16px;
+      margin-top: 5px;
+    }
+
+    .job-salary {
+      font-weight: bold;
+      color: #0c4c0c;
+      margin-top: 5px;
+      font-size: 16px;
+    }
+
+    .job-description {
+      font-size: 15px;
+      color: #444;
+      margin-top: 8px;
+    }
+
+    .btn {
+      display: inline-block;
+      text-align: center;
+      text-decoration: none;
+      margin-top: 25px;
+      padding: 12px 25px;
+      background-color: #276ef1;
+      color: white;
+      font-weight: 500;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #174fc6;
+    }
+  </style>
 </head>
 <body>
 
 <div class="container">
-    <h2>Recommended Jobs</h2>
-    {% if recommendations %}
-        <ul>
-            {% for job in recommendations %}
-            <div class="job-card">
-                <div class="job-title">{{ job.title }}</div>
-                <div class="job-company">Company: {{ job.company }}</div>
-                <div class="job-salary">Salary: {{ job.salary }}</div>
-                <div class="job-description">Description: {{ job.description }}</div>
-            </div>
-                
-            {% endfor %}
-        </ul>
-    {% else %}
-        <p>No recommendations available. Please try again with different skills.</p>
-    {% endif %}
-    <a href="{{ url_for('recommend_jobs') }}" class="btn">Back to Search</a>
+  <h2>Recommended Jobs</h2>
+  {% if recommendations %}
+      {% for job in recommendations %}
+      <div class="job-card">
+          <div class="job-title">{{ job.title }}</div>
+          <div class="job-company"><i class="fas fa-building"></i> Company: {{ job.company }}</div>
+          <div class="job-salary">Salary: {{ job.salary }}</div>
+          <div class="job-description">Description: {{ job.description }}</div>
+      </div>
+      {% endfor %}
+  {% else %}
+      <p>No recommendations available. Please try again with different skills.</p>
+  {% endif %}
+  
+  <a href="{{ url_for('recommend_jobs') }}" class="btn">Back to Search</a>
 </div>
 
 </body>

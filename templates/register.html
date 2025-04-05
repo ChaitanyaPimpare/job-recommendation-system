@@ -11,10 +11,10 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f8f9fd;
+            background-image:url('static/img/background.webp');
         }
         .register-container {
-            background: white;
+            /* background: white; */
             padding: 25px;
             border-radius: 10px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
@@ -25,7 +25,7 @@
             margin-bottom: 10px;
         }
         p {
-            color: gray;
+            color: rgb(63, 51, 51);
             font-size: 14px;
             margin-bottom: 20px;
         }
@@ -35,19 +35,20 @@
             margin-bottom: 5px;
         }
         input {
-            width: 80%;
+            width: 90%;
             padding: 12px;
             margin-bottom: 10px;
-            border: 1px solid #ccc;
+            background-color: #e4e0c9c0;
+            border: 1px solid #584141;
             border-radius: 5px;
             font-size: 14px;
         }
         button {
-            width: 80%;
+            width: 90%;
             padding: 12px;
             border: none;
             border-radius: 25px;
-            background-color: #276ef1;
+            background-color: #13a0d8;
             color: white;
             font-size: 16px;
             cursor: pointer;
@@ -63,30 +64,18 @@
         }
         .links a {
             text-decoration: none;
-            color: #276ef1;
+            color: #000000;
             font-weight: bold;
-        }
-         #successToast {
-            display: none;
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: rgb(197, 18, 173);
-            color: white;
-            padding: 10px;
-            border-radius: 5px;
-            font-size: 14px;
-            z-index: 1000;
         }
     </style>
 </head>
 <body>
-<div id="successToast">Registered Successfully!</div>
+
 <div class="register-container">
     <h2>Create Your Profile</h2>
     <p>Search & apply to jobs from India’s No.1 Job Site</p>
 
-    <form method="POST">
+    <form method="POST" onsubmit="showSuccessMessage(event)">
         <label for="username">Full Name<span style="color: red;">*</span></label>
         <input type="text" name="username" id="username" placeholder="Enter your full name" required>
 
@@ -103,18 +92,6 @@
         <a href="{{ url_for('login') }}">Already have an account? Login here.</a>
     </div>
 </div>
-<script>
-    function showSuccessMessage(event) {
-        event.preventDefault(); // Prevent form submission
 
-        let toast = document.getElementById("successToast");
-        toast.style.display = "block";
-
-        setTimeout(() => {
-            toast.style.display = "none";
-            document.querySelector("form").submit(); // Submit form after showing message
-        }, 2000);
-    }
-</script>
 </body>
 </html>
