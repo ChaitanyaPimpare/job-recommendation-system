@@ -56,12 +56,39 @@
             color: #010814;
             font-weight: bold;
         }
+    .flash-message {
+        padding: 5px;
+        margin-bottom: 5px;
+        border-radius: 5px;
+        color: white;
+    }
+    .flash-success {
+        background-color: #4ddddd;
+    }
+    .flash-danger {
+        background-color: #dc3545;
+    }
+    .flash-info {
+        background-color: #007bff;
+    }
     </style>
 </head>
 <body>
 
 <div class="login-container">
     <h2>Login</h2>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      {% for category, message in messages %}
+        <div class="flash-message 
+          {% if category == 'success' %}flash-success
+          {% elif category == 'danger' %}flash-danger
+          {% else %}flash-info{% endif %}">
+          {{ message }}
+        </div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
     <form method="POST">
         <input type="email" name="email" placeholder="Enter your Email" required><br>
         <input type="password" name="password" placeholder="Enter your password" required>
