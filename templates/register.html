@@ -89,6 +89,18 @@
 <div class="register-container">
     <h2>Create Your Profile</h2>
     <p>Search & apply to jobs from India’s No.1 Job Site</p>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      {% for category, message in messages %}
+        <div class="flash-message 
+          {% if category == 'success' %}flash-success
+          {% elif category == 'danger' %}flash-danger
+          {% else %}flash-info{% endif %}">
+          {{ message }}
+        </div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
 
     <form method="POST" onsubmit="showSuccessMessage(event)">
         <label for="username">Full Name<span style="color: red;">*</span></label>
@@ -101,18 +113,7 @@
         <input type="password" name="password" id="password" placeholder="(Minimum 6 characters)" required>
 
         <button type="submit">Register</button>
-        {% with messages = get_flashed_messages(with_categories=true) %}
-  {% if messages %}
-    {% for category, message in messages %}
-      <div class="flash-message 
-        {% if category == 'success' %}flash-success
-        {% elif category == 'danger' %}flash-danger
-        {% else %}flash-info{% endif %}">
-        {{ message }}
-      </div>
-    {% endfor %}
-  {% endif %}
-{% endwith %}
+    
 
     </form>
 

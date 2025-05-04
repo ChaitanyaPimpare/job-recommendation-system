@@ -3,7 +3,7 @@ import pickle
 from sklearn.feature_extraction.text import TfidfVectorizer
 
 # Sample job dataset
-ob_data = pd.DataFrame({
+job_data = pd.DataFrame({
     'job_id': list(range(1, 16)),
     'title': ['Software Engineer', 'Data Scientist', 'Web Developer', 'AI Engineer', 'Backend Developer',
               'Cybersecurity Analyst', 'Cloud Engineer', 'DevOps Engineer', 'Mobile App Developer', 'UI/UX Designer',
@@ -36,7 +36,7 @@ ob_data = pd.DataFrame({
 
 # TF-IDF Vectorization
 vectorizer = TfidfVectorizer()
-job_vectors = vectorizer.fit_transform(job_data['description'])
+job_vectors = vectorizer.fit_transform(job_data['description''title''company'])
 
 # Save the trained model
 pickle.dump(vectorizer, open('vectorizer.pkl', 'wb'))

@@ -1,13 +1,20 @@
 body {
-    background: url('https://source.unsplash.com/1600x900/?technology,office') no-repeat center center/cover;
     height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../img/bac.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+   
 }
+
+
 .container {
-    background: rgba(255, 255, 255, 0.9);
+    /* background: rgba(230, 231, 210, 0.9); */
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -15,19 +22,28 @@ body {
     text-align: center;
 }
 .btn-custom {
-    background-color: #007bff;
+    background-color:#3b89d3;
     color: white;
-    padding: 12px;
-    font-size: 18px;
-    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+    width: 30%;
     border-radius: 5px;
     transition: 0.3s;
 }
 .btn-custom:hover {
     background-color: #0056b3;
 }
+.btn-cust{
+  background-color:#3795d4;
+  color: white;
+  padding: 9px;
+  font-size: 10px;
+  width: 30%;
+  border-radius: 5px;
+
+}
 .navbar {
-    background-color: #007bff;
+    background-color: #f1f4f7;
     padding: 10px;
     width: 100%;
     display: flex;
@@ -36,7 +52,7 @@ body {
     top: 0;
 }
 .navbar a {
-    color: white;
+    color: rgb(66, 50, 50);
     text-decoration: none;
     margin: 0 10px;
 }
@@ -81,12 +97,18 @@ body {
     height: 30px;
     margin-right: 10px;
 }
+.navbar .nav-item {
+    list-style-type: none; 
+    padding-left: 0;  
+    /* font-weight: bold;      */
+    margin: 0;
+}
 
 .brand-text {
     font-family: 'Poppins', sans-serif;
     font-size: 22px;
     font-weight: bold;
-    color: #ecf0f4;
+    color: #151718;
 }
 .h2{
     font-family: 'Courier New', Courier, monospace;
@@ -106,3 +128,77 @@ body {
     border: none;
     
 }
+.profile-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #f0f0f0;
+  color: #333;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+    width: 250px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Dropdown items */
+  .dropdown-menu .dropdown-item {
+    padding: 10px 15px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+  }
+  
+  .dropdown-menu .dropdown-item:hover {
+    background-color: #f0f0f0;
+  }
+  
+  /* Username + email section in dropdown */
+  .dropdown-menu strong {
+    font-size: 16px;
+  }
+  
+  .dropdown-menu small {
+    color: gray;
+    font-size: 13px;
+  }
+  .hero {
+    /* background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/static/img/hero-bg.jpg') center/cover no-repeat; */
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+    font-weight: bold;
+  }
+
+  .typed-text {
+    color: #00f0ff;
+    font-weight: bold;
+  }
+
+  .subtext {
+    margin-top: 15px;
+    font-size: 1.1rem;
+  }
+
+  .btn-custom {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+  }
+
+  .job-list .job-item {
+    background: #f1f1f1;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+
+  }

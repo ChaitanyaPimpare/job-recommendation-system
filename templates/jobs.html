@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Job Listings</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="/static/css/style.css">
+    <style>
+        body {
+        font-family: 'Poppins', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-image: url('/static/img/bac.jpg');
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        min-height: 100vh;
+    }
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 999;
+            background-color: #d3d9dfef;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #fff;
+        }
+
+    .container {
+      max-width: 1000px;
+      padding: 60px 40px;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 12px;
+      margin-top: 3150px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      text-align: left;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+        .job-card {
+      background: #f9f9f9;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 12px;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s, box-shadow 0.3s;
+    }
+
+    .job-card:hover {
+      transform: scale(1.02);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .job-title {
+      font-weight: 600;
+      font-size: 18px;
+      color: #1a1a1a;
+    }
+
+    .job-company {
+      color: #276ef1;
+      font-size: 15px;
+      margin-top: 5px;
+    }
+
+    .job-salary {
+      font-weight: bold;
+      color: #0c4c0c;
+      margin-top: 5px;
+      font-size: 15px;
+    }
+
+    .job-description {
+      font-size: 14px;
+      color: #444;
+      margin-top: 8px;
+    }
+
+    .btn {
+      display: inline-block;
+      text-align: center;
+      text-decoration: none;
+      margin-top: 20px;
+      padding: 8px 22px;
+      background-color: #276ef1;
+      color: white;
+      font-weight: 500;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #174fc6;
+    }
+
+        .auth-links a {
+            margin-left: 15px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .auth-links a:hover {
+            text-decoration: underline;
+        }
+
+        .brand-text {
+            font-weight: bold;
+            font-size: 18px;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="{{ url_for('index') }}" class="navbar-brand d-flex align-items-center text-white">
+            <img src="{{ url_for('static', filename='img/logo.jpg') }}" alt="Logo" width="40" height="40" class="d-inline-block align-top">
+            <span class="brand-text">Job Recommendation System</span>
+        </a>
+        <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('index') }}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a> 
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('job_listings') }}">Job Listings</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a> 
+          </li>
+        <div class="auth-links">
+            {% if current_user.is_authenticated %}
+                <a class="logout-btn" href="{{ url_for('logout') }}">Logout</a>
+            {% else %}
+                <a class="login-btn" href="{{ url_for('login') }}">Login</a>
+                <a class="register-btn" href="{{ url_for('register') }}">Register</a>
+            {% endif %}
+        </div>
+    </nav>
+    <div class="container container-jobs">
+        <h2 class="mb-4">All Available Jobs</h2>
+        {% for job in jobs %}
+            <div class="job-card">
+                    <div class="job-title"><i class="fas fa-briefcase"></i> {{ job.title }}</div>
+                    <div class="job-company"><i class="fas fa-building"></i> Company: {{ job.company }}</div>
+                    <div class="job-salary"><i class="fas fa-money-bill-wave"></i> Salary: {{ job.salary }}</div>
+                    <div class="job-description"><i class="fas fa-align-left"></i> Description: {{ job.description }}</div>
+                    <form method="POST" action="{{ url_for('apply_job') }}">
+                        <input type="hidden" name="job_id" value="{{ job['job_id'] }}">
+                        <button type="submit" class="btn">Apply</button>
+                      </form>
+            </div>
+        {% endfor %}
+        <a href="{{ url_for('index') }}" class="btn">Home</a>
+    </div>
+
+</body>
+</html>
