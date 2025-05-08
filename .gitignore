@@ -12,7 +12,3 @@ __pycache__/
 # SQLite database instance (if used)
 #instance/
 
-# OS-specific files
-.DS_Store
-Thumbs.db
-"instance/users.db" 
