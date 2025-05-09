@@ -4,6 +4,10 @@
 # Job Recommendation System
 
 This is a **Job Recommendation System** that suggests jobs based on user skills using **Machine Learning**. It is built with **Flask, SQLite, and Scikit-Learn**.
+A Machine Learning-based web application that recommends jobs to users based on their skills.Built with 
+Flask,SQLite, and Scikit-Learn, this system leverages data to provide personalized job suggestions. It is deployed on 
+Render for easy access.
+LiveLink:https://job-recommendation-system-n7wq.onrender.com
 
 ##  Features
 - User authentication (Register, Login, Logout)
