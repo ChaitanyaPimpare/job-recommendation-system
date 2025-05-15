@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # job-recommendation-system
 =======
 # Job Recommendation System
