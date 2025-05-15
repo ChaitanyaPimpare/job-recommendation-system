@@ -52,4 +52,3 @@ python create_db.py
 python app.py
 
 Now, open your browser and go to http://127.0.0.1:5000/.
->>>>>>> 6039fe3 (Initial commit with .gitignore)
