@@ -1,0 +1,117 @@
+
+        body {
+        font-family: 'Poppins', sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../img/back.jpg');
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        min-height: 100vh;
+    }
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 999;
+            background-color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #fff;
+        }
+
+        
+    .container {
+      max-width: 1000px;
+      padding: 60px 40px;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 12px;
+      margin-top: 3150px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      text-align: left;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+        .job-card {
+      background: #f9f9f9;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 12px;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s, box-shadow 0.3s;
+    }
+
+    .job-card:hover {
+      transform: scale(1.02);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .job-title {
+      font-weight: 600;
+      font-size: 18px;
+      color: #1a1a1a;
+    }
+
+    .job-company {
+      color: #276ef1;
+      font-size: 15px;
+      margin-top: 5px;
+    }
+
+    .job-salary {
+      font-weight: bold;
+      color: #0c4c0c;
+      margin-top: 5px;
+      font-size: 15px;
+    }
+
+    .job-description {
+      font-size: 14px;
+      color: #444;
+      margin-top: 8px;
+    }
+
+    .btn {
+      display: inline-block;
+      text-align: center;
+      text-decoration: none;
+      margin-top: 20px;
+      padding: 8px 22px;
+      background-color: #276ef1;
+      color: white;
+      font-weight: 500;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #174fc6;
+    }
+
+        .auth-links a {
+            margin-left: 15px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .auth-links a:hover {
+            text-decoration: underline;
+        }
+
+        .brand-text {
+            font-weight: bold;
+            font-size: 18px;
+            margin-left: 10px;
+        }

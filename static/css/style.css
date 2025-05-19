@@ -4,7 +4,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../img/bac.jpg');
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../img/back.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -22,12 +22,12 @@ body {
     text-align: center;
 }
 .btn-custom {
-    background-color:#3b89d3;
+    background-color:#13a0d8;
     color: white;
     padding: 10px;
     font-size: 15px;
     width: 30%;
-    border-radius: 5px;
+    border-radius: 10px;
     transition: 0.3s;
 }
 .btn-custom:hover {
@@ -43,7 +43,7 @@ body {
 
 }
 .navbar {
-    background-color: #f1f4f7;
+    background-color: white;
     padding: 10px;
     width: 100%;
     display: flex;
@@ -52,12 +52,17 @@ body {
     top: 0;
 }
 .navbar a {
-    color: rgb(66, 50, 50);
+    color: rgb(248, 240, 240);
     text-decoration: none;
     margin: 0 10px;
 }
+
 .navbar .auth-links {
     margin-right: 20px;
+}
+.navbar .nav-link{
+  font-family: sans-serif;
+  color: black;
 }
 .login-btn {
     background-color: #df43e2;
@@ -80,6 +85,10 @@ body {
     border-radius: 20px;
     font-weight: bold;
     border: none;
+}
+.register-btn:hover {
+    background-color: rgb(255, 136, 0);
+    color: white;
 }
 .navbar-brand {
     font-family: 'Courier New', Courier, monospace;
